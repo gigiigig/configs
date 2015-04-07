@@ -80,15 +80,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ## Edited 
+include () {
+  [[ -f "$1"  ]] && source "$1"
+}
 
-PATH=$PATH:/home/luigi/bin
-PATH=$PATH:/home/luigi/programs/activator
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+include ./.bash_profile
+include ./.bashrc
 
 ## Aliases
 alias gctags="ctags -R -f .tags . --exclude=target --exclude=vendor"
-
-
 
