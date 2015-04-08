@@ -25,21 +25,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mdreves/vim-scaladoc'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'spiroid/vim-ultisnip-scala'
 
-" All of your Plugins must be added before the following line
+"" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " My Config
 filetype plugin on
@@ -52,6 +44,7 @@ set backspace=indent,eol,start
 set tags=./.tags;
 set mouse=a
 set hlsearch
+
 " Buffers 
 " Allow switching buffer without saving
 set hidden
@@ -81,31 +74,28 @@ colorscheme monokai
 
 " Track the engine.
 function! g:UltiSnips_Complete()
-	call UltiSnips#ExpandSnippet()
-	if g:ulti_expand_res == 0
-		if pumvisible()
-			return "\<C-n>"
-		else
-			call UltiSnips#JumpForwards()
-			if g:ulti_jump_forwards_res == 0
-				return "\<TAB>"
-			endif
-		endif
-	endif
-	return ""
+        call UltiSnips#ExpandSnippet()
+        if g:ulti_expand_res == 0
+                if pumvisible()
+                        return "\<C-n>"
+                else
+                        call UltiSnips#JumpForwards()
+                        if g:ulti_jump_forwards_res == 0
+                                return "\<TAB>"
+                        endif
+                endif
+        endif
+        return ""
 endfunction
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-Plugin 'SirVer/ultisnips'
-"
-" " Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
-"
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
+
+" UltiSnipss cofiguration
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+
 
