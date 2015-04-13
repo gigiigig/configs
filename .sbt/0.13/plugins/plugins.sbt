@@ -6,3 +6,8 @@ resolvers += Resolver.sonatypeRepo("snapshots")
 
 //addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "3.0.0")
 
+addSbtPlugin("com.kalmanb.sbt" % "sbt-ctags" % "0.3.0")
+
+resolvers += Classpaths.sbtPluginReleases
+
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.0.4")
