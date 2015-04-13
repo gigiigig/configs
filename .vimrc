@@ -28,6 +28,7 @@ Plugin 'mdreves/vim-scaladoc'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'spiroid/vim-ultisnip-scala'
+Plugin 'tpope/vim-unimpaired'
 
 "" All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -97,5 +98,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" CtrlP
+let g:ctrlp_by_filename=1 
 
+nnoremap <C-b> <esc> :CtrlPBuffer <cr>
+inoremap <C-b> <esc> :CtrlPBuffer <cr>
+vnoremap <C-b> <esc> :CtrlPBuffer <cr>
 
