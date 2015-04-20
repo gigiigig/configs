@@ -73,6 +73,13 @@ map <F3> :NERDTreeFind<CR>
 " Colorcheme
 colorscheme monokai
 
+" CtrlP
+let g:ctrlp_by_filename=1 
+
+nnoremap <C-b> <esc> :CtrlPBuffer <cr>
+inoremap <C-b> <esc> :CtrlPBuffer <cr>
+vnoremap <C-b> <esc> :CtrlPBuffer <cr>
+
 " Track the engine.
 function! g:UltiSnips_Complete()
         call UltiSnips#ExpandSnippet()
@@ -98,10 +105,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" CtrlP
-let g:ctrlp_by_filename=1 
-
-nnoremap <C-b> <esc> :CtrlPBuffer <cr>
-inoremap <C-b> <esc> :CtrlPBuffer <cr>
-vnoremap <C-b> <esc> :CtrlPBuffer <cr>
-
+"smart indent when entering insert mode with i on empty lines
+function! IndentWithI()
+	if len(getline('.')) == 0
+		return "\"_cc"
+	else
+		return "i"
+	endif
+endfunction
+nnoremap <expr> i IndentWithI()
