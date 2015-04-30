@@ -1,0 +1,10 @@
+[alias]
+	co = checkout
+	br = branch
+	st = status
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold yellow)%h%C(reset) - %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'  
+[user]
+	name = Luigi Antonini
+	email = luigi.antonini84@gmail.com
+[core]
+	editor = vim
