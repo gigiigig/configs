@@ -8,3 +8,4 @@
 	email = luigi.antonini84@gmail.com
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
