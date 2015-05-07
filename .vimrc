@@ -114,3 +114,11 @@ function! IndentWithI()
 	endif
 endfunction
 nnoremap <expr> i IndentWithI()
+
+" workaround for https://github.com/mdreves/vim-scaladoc/issues/1
+fun! OpenScalaDoc( arg  )
+  call scaladoc#Search(a:arg)
+endf
+command! -nargs=+ ScalaDoc call OpenScalaDoc('<f-args>')
+autocmd FileType scala nnoremap K :call OpenScalaDoc(expand("<cword>"))<CR>
+
