@@ -29,6 +29,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'spiroid/vim-ultisnip-scala'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-scripts/BufOnly.vim'
 
 "" All of your Plugins must be added before the following line
 call vundle#end()            " required
