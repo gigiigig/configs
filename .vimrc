@@ -127,3 +127,8 @@ autocmd FileType scala nnoremap K :call OpenScalaDoc(expand("<cword>"))<CR>
 
 " Vim Airline
 let g:airline#extensions#tabline#enabled = 1
+
+" Ctrl-S save
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>

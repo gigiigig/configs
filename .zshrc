@@ -88,4 +88,7 @@ include ./.zshrc_local
 
 ## Aliases
 alias gctags="ctags -R -f .tags . --exclude=target --exclude=vendor"
+alias vim="stty stop '' -ixoff ; vim"
 
+# # `Frozing' tty, so after any command terminal settings will be restored
+ttyctl -f`
