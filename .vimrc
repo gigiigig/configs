@@ -31,6 +31,7 @@ Plugin 'spiroid/vim-ultisnip-scala'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'bling/vim-airline'
 
 "" All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -124,3 +125,5 @@ endf
 command! -nargs=+ ScalaDoc call OpenScalaDoc('<f-args>')
 autocmd FileType scala nnoremap K :call OpenScalaDoc(expand("<cword>"))<CR>
 
+" Vim Airline
+let g:airline#extensions#tabline#enabled = 1
