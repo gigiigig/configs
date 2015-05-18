@@ -1,8 +1,13 @@
 ## My Snippets ##
 
-#prl
+#prinln
 snippet prl "prl" b
 println(s"${1:}: \${${0:}}")
+endsnippet
+
+#log.debug
+snippet ld "log.debug" b
+log.debug(s"${1:}: \${${0:}}")
 endsnippet
 
 #commodityvectors import 
@@ -10,4 +15,8 @@ snippet icv "icv" b
 import commodityvectors.
 endsnippet
 
-
+#import future
+snippet ifut "Import Future" b
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future	
+endsnippet
