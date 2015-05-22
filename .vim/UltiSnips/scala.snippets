@@ -20,3 +20,15 @@ snippet ifut "Import Future" b
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future	
 endsnippet
+
+#import scalatest
+snippet iscalatest "Import ScalaTest" b
+import org.scalatest.FunSpec
+import org.scalatest.Matchers._
+endsnippet
+
+snippet dws "Database with session" b
+db withSession { implicit session =>
+  ${0:}
+}
+endsnippet 
