@@ -75,7 +75,11 @@ map <F2> :NERDTreeToggle<CR>
 map <F3> :NERDTreeFind<CR>
 
 " Colorcheme
-colorscheme monokai
+set t_Co=256
+colorscheme molokai
+hi MatchParen      ctermfg=208 ctermbg=233 cterm=underline
+"let g:rehash256 = 1
+"let g:molokai_original = 1
 
 " CtrlP
 let g:ctrlp_by_filename=1 
