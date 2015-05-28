@@ -48,7 +48,14 @@ set noswapfile
 set backspace=indent,eol,start
 set tags=./.tags;
 set mouse=a
+" search 
 set hlsearch
+set incsearch
+" indentation
+set autoindent
+set cindent
+set shiftwidth=2
+set expandtab
 
 " Buffers 
 " Allow switching buffer without saving
@@ -112,16 +119,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
-"smart indent when entering insert mode with i on empty lines
-function! IndentWithI()
-	if len(getline('.')) == 0
-		return "\"_cc"
-	else
-		return "i"
-	endif
-endfunction
-nnoremap <expr> i IndentWithI()
 
 " workaround for https://github.com/mdreves/vim-scaladoc/issues/1
 fun! OpenScalaDoc( arg  )
