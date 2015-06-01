@@ -56,6 +56,7 @@ set autoindent
 set cindent
 set shiftwidth=2
 set expandtab
+set tabstop=2
 
 " Buffers 
 " Allow switching buffer without saving
