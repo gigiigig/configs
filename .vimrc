@@ -135,3 +135,13 @@ let g:airline#extensions#tabline#enabled = 1
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
+
+"smart indent when entering insert mode with i on empty lines
+function! IndentWithI()
+  if len(getline('.')) == 0
+    return "\"_cc"
+  else
+    return "i"
+  endif
+endfunction
+nnoremap <expr> i IndentWithI()
