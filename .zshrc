@@ -84,7 +84,7 @@ include () {
   [[ -f "$1"  ]] && source "$1"
 }
 
-include ./.zshrc_local
+include ~/.zshrc_local
 
 ## Aliases
 alias gctags="ctags -R -f .tags . --exclude=target --exclude=vendor"
