@@ -34,6 +34,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'bling/vim-airline'
 Plugin 'tomasr/molokai'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'reedes/vim-lexical'
 
 "" All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -146,3 +147,11 @@ function! IndentWithI()
   endif
 endfunction
 nnoremap <expr> i IndentWithI()
+
+" Vim Lexical configuration
+augroup lexical
+  autocmd!
+  autocmd FileType markdown,mkd call lexical#init()
+  autocmd FileType textile call lexical#init()
+  autocmd FileType text call lexical#init({ 'spell': 0  })
+augroup END
