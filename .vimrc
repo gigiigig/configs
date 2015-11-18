@@ -1,45 +1,36 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'tpope/vim-fugitive'
+Plug 'git://git.wincent.com/command-t.git'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " My Plugins
-Plugin 'derekwyatt/vim-scala'
-Plugin 'kien/ctrlp.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'kien/ctrlp.vim'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/target*,.idea*
 
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'mdreves/vim-scaladoc'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'spiroid/vim-ultisnip-scala'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-scripts/BufOnly.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'bling/vim-airline'
-Plugin 'tomasr/molokai'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'reedes/vim-lexical'
-Plugin 'bufkill.vim'
-Plugin 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mdreves/vim-scaladoc'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'spiroid/vim-ultisnip-scala'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-scripts/BufOnly.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'bling/vim-airline'
+Plug 'tomasr/molokai'
+Plug 'airblade/vim-gitgutter'
+Plug 'reedes/vim-lexical'
+Plug 'bufkill.vim'
+Plug 'scrooloose/syntastic'
+Plug 'ensime/ensime-vim'
 
-"" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
+
 filetype plugin indent on    " required
 
 " My Config
