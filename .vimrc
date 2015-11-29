@@ -28,6 +28,7 @@ Plug 'reedes/vim-lexical'
 Plug 'bufkill.vim'
 Plug 'scrooloose/syntastic'
 Plug 'ensime/ensime-vim'
+Plug 'suan/vim-instant-markdown'
 
 call plug#end()
 
