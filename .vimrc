@@ -53,6 +53,10 @@ set shiftwidth=2
 set expandtab
 set tabstop=2
 
+" remove bells for vim errors
+set noeb
+set vb t_vb=
+
 " Buffers 
 " Allow switching buffer without saving
 set hidden
@@ -148,3 +152,8 @@ augroup lexical
   autocmd FileType textile call lexical#init()
   autocmd FileType text call lexical#init({ 'spell': 0  })
 augroup END
+
+" EnsimeVim ctrl-click navigation
+noremap <C-RightMouse> <esc> :EnDeclaration <cr>
+autocmd BufWritePost *.scala :EnTypeCheck
+
