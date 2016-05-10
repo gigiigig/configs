@@ -26,7 +26,6 @@ Plug 'tomasr/molokai'
 Plug 'airblade/vim-gitgutter'
 Plug 'reedes/vim-lexical'
 Plug 'bufkill.vim'
-Plug 'scrooloose/syntastic'
 Plug 'ensime/ensime-vim'
 Plug 'suan/vim-instant-markdown'
 
