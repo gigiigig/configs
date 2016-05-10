@@ -88,6 +88,7 @@ include ~/.zshrc_local
 
 ## Aliases
 alias gctags="ctags -R -f .tags . --exclude=target --exclude=vendor"
+alias rensime="rm -rf .ensime .ensime_cache ~/.ivy2/cache/org.ensime/ ~/.config/ensime-vim/ ; sbt gen-ensime"
 
 # zsh
 alias vim="stty stop '' -ixoff ; vim"
