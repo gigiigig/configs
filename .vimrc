@@ -29,6 +29,7 @@ Plug 'bufkill.vim'
 Plug 'ensime/ensime-vim'
 Plug 'suan/vim-instant-markdown'
 Plug 'idris-hackers/idris-vim'
+Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()
 
