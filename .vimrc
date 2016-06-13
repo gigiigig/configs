@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
-Plug 'git://git.wincent.com/command-t.git'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " My Plugins
@@ -14,12 +13,11 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mdreves/vim-scaladoc'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'spiroid/vim-ultisnip-scala'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-scripts/BufOnly.vim'
+Plug 'schickling/vim-bufonly'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'bling/vim-airline'
 Plug 'tomasr/molokai'
