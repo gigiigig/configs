@@ -43,7 +43,7 @@ set noswapfile
 set backspace=indent,eol,start
 set tags=./.tags;
 set mouse=a
-" search 
+" search
 set hlsearch
 set incsearch
 " indentation
@@ -57,7 +57,7 @@ set tabstop=2
 set noeb
 set vb t_vb=
 
-" Buffers 
+" Buffers
 " Allow switching buffer without saving
 set hidden
 " F5 - previous buffer
@@ -89,7 +89,7 @@ hi MatchParen      ctermfg=208 ctermbg=233 cterm=underline
 "let g:molokai_original = 1
 
 " CtrlP
-let g:ctrlp_by_filename=1 
+let g:ctrlp_by_filename=1
 
 nnoremap <C-b> <esc> :CtrlPBuffer <cr>
 inoremap <C-b> <esc> :CtrlPBuffer <cr>
@@ -153,7 +153,17 @@ augroup lexical
   autocmd FileType text call lexical#init({ 'spell': 0  })
 augroup END
 
-" EnsimeVim ctrl-click navigation
+" Remove whictespaces on save
+autocmd BufWritePost * :FixWhitespace
+
+" EnsimeVim
+" ctrl-click navigation
 noremap <C-RightMouse> <esc> :EnDeclaration <cr>
+
 autocmd BufWritePost *.scala :EnTypeCheck
+autocmd BufWinEnter	*.scala :EnTypeCheck
+
+nnoremap <silent><Leader>d :EnDeclaration <cr>
+nnoremap <silent><Leader>t :EnType <cr>
+nnoremap <silent><Leader>si :EnSuggestImport <cr>
 
