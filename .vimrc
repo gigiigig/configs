@@ -8,7 +8,8 @@ Plug 'derekwyatt/vim-scala'
 Plug 'kien/ctrlp.vim'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/target*,.idea*
 
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'Shougo/deoplete.nvim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
@@ -160,10 +161,19 @@ autocmd BufWritePost * :FixWhitespace
 " ctrl-click navigation
 noremap <C-RightMouse> <esc>:EnDeclaration<cr>
 
-autocmd BufWritePost *.scala :EnTypeCheck
-"autocmd BufWinEnter	*.scala :EnTypeCheck
+autocmd BufWritePost *.scala silent :EnTypeCheck
 
 nnoremap <Leader>d <esc>:EnDeclaration<cr>
 nnoremap <Leader>t <esc>:EnType<cr>
 nnoremap <Leader>si <esc>:EnSuggestImport<cr>
 
+let g:deoplete#enable_at_startup = 1
+"let g:deoplete#sources = {}
+"let g:deoplete#sources.scala = ['buffer', 'tags', 'omni']
+let g:deoplete#omni#input_patterns = {}
+"let g:deoplete#omni#input_patterns.scala = ['[^. *\t0-9]\.\w*',': [A-Z]\w', '[\[\t\( ][A-Za-z]\w*']
+let g:deoplete#omni#input_patterns.scala = [
+  \ '[^. *\t]\.\w*',
+  \ '[:\[,] ?\w*',
+  \ '^import .*'
+  \]
