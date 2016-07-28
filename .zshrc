@@ -79,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-## Edited 
+## Edited
 include () {
   [[ -f "$1"  ]] && source "$1"
 }
@@ -88,7 +88,10 @@ include ~/.zshrc_local
 
 ## Aliases
 alias gctags="ctags -R -f .tags . --exclude=target --exclude=vendor"
-alias rensime="rm -rf .ensime .ensime_cache ~/.ivy2/cache/org.ensime/ ~/.config/ensime-vim/ ; sbt ensimeConfig"
+alias rensime_all="rm -rf .ensime .ensime_cache ~/.ivy2/cache/org.ensime/ ~/.config/ensime-vim/; sbt ensimeConfig"
+alias rensime_project="rm -rf .ensime .ensime_cache; sbt ensimeConfig"
+alias rensime_conf="sbt ensimeConfig"
+alias psf='ps -ef | grep'
 
 # zsh
 alias vim="stty stop '' -ixoff ; vim"
