@@ -9,7 +9,7 @@
 	name = Luigi Antonini
 	email = luigi.antonini84@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore
 [push]
 	default = matching
