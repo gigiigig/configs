@@ -53,6 +53,8 @@ set cindent
 set shiftwidth=2
 set expandtab
 set tabstop=2
+set ignorecase
+set smartcase
 
 " remove bells for vim errors
 set noeb
