@@ -8,3 +8,6 @@ initialCommands in (Test, console) := """ammonite.Main().run()"""
 
 cancelable in Global := true
 
+import coursier.CoursierPlugin.autoImport._
+
+coursierUseSbtCredentials := true
