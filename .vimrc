@@ -29,6 +29,7 @@ Plug 'ensime/ensime-vim'
 Plug 'suan/vim-instant-markdown'
 Plug 'idris-hackers/idris-vim'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'scrooloose/syntastic'
 
 call plug#end()
 
