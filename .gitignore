@@ -1,2 +1,4 @@
 .lib-src/
 .tags
+.ensime
+.ensime_cache
