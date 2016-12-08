@@ -161,12 +161,10 @@ augroup END
 autocmd BufWritePost * :FixWhitespace
 
 " EnsimeVim
-" ctrl-click navigation
-noremap <C-RightMouse> <esc>:EnDeclaration<cr>
-
 autocmd BufWritePost *.scala silent :EnTypeCheck
 
-nnoremap <Leader>d <esc>:EnDeclaration<cr>
+noremap <C-RightMouse> <esc>:EnDeclarationSplit v<cr>
+nnoremap <Leader>d <esc>:EnDeclarationSplit v<cr>
 nnoremap <Leader>t <esc>:EnType<cr>
 nnoremap <Leader>si <esc>:EnSuggestImport<cr>
 
