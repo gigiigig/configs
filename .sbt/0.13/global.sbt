@@ -1,4 +1,4 @@
-libraryDependencies += "com.lihaoyi" %% "pprint" % "0.4.1"
+libraryDependencies += "com.lihaoyi" %% "pprint" % "0.4.3"
 
 libraryDependencies += "com.lihaoyi" % "ammonite" % "0.7.5" % "test" cross CrossVersion.full
 
