@@ -9,3 +9,8 @@ cancelable in Global := true
 import coursier.CoursierPlugin.autoImport._
 
 coursierUseSbtCredentials := true
+
+import com.softwaremill.clippy.ClippySbtPlugin._
+
+clippyColorsEnabled := true
+
