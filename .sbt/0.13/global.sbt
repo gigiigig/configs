@@ -17,7 +17,7 @@ import com.softwaremill.clippy.ClippySbtPlugin._
 clippyColorsEnabled := true
 
 // Ensime
-import org.ensime.EnsimeCoursierKeys._
+import org.ensime.EnsimeKeys._
 
 ensimeServerVersion in ThisBuild := "2.0.0-M1" // or "1.0.1"
 
