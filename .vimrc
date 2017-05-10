@@ -162,6 +162,7 @@ autocmd BufWritePost * :FixWhitespace
 
 " EnsimeVim
 autocmd BufWritePost *.scala silent :EnTypeCheck
+let ensime_server_v2=1
 
 noremap <C-RightMouse> <esc>:EnDeclarationSplit v<cr>
 nnoremap <Leader>d <esc>:EnDeclarationSplit v<cr>
