@@ -164,8 +164,10 @@ autocmd BufWritePost * :FixWhitespace
 autocmd BufWritePost *.scala silent :EnTypeCheck
 let ensime_server_v2=1
 
-noremap <C-RightMouse> <esc>:EnDeclarationSplit v<cr>
-nnoremap <Leader>d <esc>:EnDeclarationSplit v<cr>
+noremap <C-RightMouse> <esc>:EnDeclarationSplit<cr>
+nnoremap <Leader>d <esc>:EnDeclaration<cr>
+nnoremap <Leader>ds <esc>:EnDeclarationSplit<cr>
+nnoremap <Leader>dv <esc>:EnDeclarationSplit v<cr>
 nnoremap <Leader>t <esc>:EnType<cr>
 nnoremap <Leader>si <esc>:EnSuggestImport<cr>
 
