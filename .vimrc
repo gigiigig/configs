@@ -139,6 +139,9 @@ noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
 
+" Noh
+nnoremap <C-h> :noh<esc>
+
 "smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
   if len(getline('.')) == 0
@@ -169,6 +172,7 @@ nnoremap <Leader>d <esc>:EnDeclaration<cr>
 nnoremap <Leader>ds <esc>:EnDeclarationSplit<cr>
 nnoremap <Leader>dv <esc>:EnDeclarationSplit v<cr>
 nnoremap <Leader>t <esc>:EnType<cr>
+nnoremap <Leader>tc <esc>:EnTypeCheck<cr>
 nnoremap <Leader>si <esc>:EnSuggestImport<cr>
 
 let g:deoplete#enable_at_startup = 1
