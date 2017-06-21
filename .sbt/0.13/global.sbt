@@ -21,3 +21,8 @@ import org.ensime.EnsimeKeys._
 
 ensimeServerVersion in ThisBuild := "2.0.0-M1" // or "1.0.1"
 
+// Sbt console color
+initialize ~= { _ =>
+  val ansi = System.getProperty("sbt.log.noformat", "false") != "true"
+  if (ansi) System.setProperty("scala.color", "true")
+}
