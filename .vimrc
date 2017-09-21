@@ -30,6 +30,7 @@ Plug 'suan/vim-instant-markdown'
 Plug 'idris-hackers/idris-vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'scrooloose/syntastic'
+Plug 'gregsexton/matchtag'
 
 call plug#end()
 
