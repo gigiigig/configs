@@ -1,5 +1,5 @@
-## My Snippets ##
 
+## My Snippets ##
 #prinln
 snippet prl "prl" b
 println(s"${1:}: \${${0:}}")
@@ -10,15 +10,10 @@ snippet ld "log.debug" b
 log.debug(s"${1:}: \${${0:}}")
 endsnippet
 
-#commodityvectors import 
-snippet icv "icv" b
-import commodityvectors.
-endsnippet
-
 #import future
 snippet ifut "Import Future" b
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.Future	
+import scala.concurrent.Future
 endsnippet
 
 #import scalatest
@@ -31,12 +26,13 @@ snippet dws "Database with session" b
 db withSession { implicit session =>
   ${0:}
 }
-endsnippet 
+endsnippet
 
 snippet iz "Import Scalaz" b
 import scalaz._, Scalaz._
-endsnippet 
+endsnippet
 
 snippet plog "Pprint Log" b
-pprint.log2(${0:})
-endsnippet 
+pprint.log(${0:})
+endsnippet
+
