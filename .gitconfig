@@ -2,9 +2,17 @@
 	co = checkout
 	br = branch
 	st = status
-	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold yellow)%h%C(reset) - %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'  
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold yellow)%h%C(reset) - %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
 	ignore = update-index --assume-unchanged
 	notignore = update-index --no-assume-unchanged
+  # Delete all local branches but master and the current one, only if they are fully merged with master.
+  br-delete-useless = "!f(){\
+      git branch | grep -v "master" | grep -v ^* | xargs git branch -d;\
+  }; f"
+  # Delete all local branches but master and the current one.
+  br-delete-useless-force = "!f(){\
+      git branch | grep -v "master" | grep -v ^* | xargs git branch -D;\
+  }; f"
 [user]
 	name = Luigi Antonini
 	email = luigi.antonini84@gmail.com
@@ -13,3 +21,13 @@
 	excludesfile = ~/.gitignore
 [push]
 	default = matching
+	followTags = true
+[gitflow "feature.finish"]
+	keepremote = no
+	squash = yes
+[gitflow "hotfix.finish"]
+	keepremote = no
+[gitflow "release.finish"]
+	keepremote = no
+	squash = no
+

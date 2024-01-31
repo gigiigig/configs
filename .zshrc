@@ -41,6 +41,8 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+ZSH_DISABLE_COMPFIX=true
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -87,13 +89,8 @@ include () {
 include ~/.zshrc_local
 
 ## Aliases
-alias gctags="ctags -R -f .tags . --exclude=target --exclude=vendor"
-alias rensime_all="rm -rf .ensime .ensime_cache ~/.ivy2/cache/org.ensime/ ~/.config/ensime-vim/; sbt ensimeConfig"
-alias rensime_project="rm -rf .ensime .ensime_cache; sbt ensimeConfig"
-alias rensime_conf="sbt ensimeConfig"
 alias psf='ps -ef | grep'
 
-# zsh
-alias vim="stty stop '' -ixoff ; vim"
-# `Frozing' tty, so after any command terminal settings will be restored
-ttyctl -f
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/l.antonini/.sdkman"
+[[ -s "/Users/l.antonini/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/l.antonini/.sdkman/bin/sdkman-init.sh"
