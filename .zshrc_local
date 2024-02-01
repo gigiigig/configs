@@ -1,0 +1,76 @@
+# export AWS_ENDPOINT_URL=http://localhost:5678/
+export AVRO_REGISTRY_URL=https://avro-registry.internal.stuart.com
+export BOOTSTRAP_SERVERS=localhost  #services-1.dispload.eu-west-1.stuart:9092
+export DIRECTIONS_SERVICE_SCHEME=https
+export DIRECTIONS_SERVICE_HOST=directions.beta.internal.stuart.com
+export DIRECTIONS_SERVICE_PORT=443
+export DISPATCHER_COMMANDS_TOPIC=dispatcher-commands-dj
+export GROUP_ID=luigi_dis_dispatcher_test
+export LOG_LEVEL=DEBUG
+export LOAD_NUM_DAYS_KAFKA=7
+export S3_BUCKET=stuart-data
+export ZONES=barcelona
+export ZOOKEEPER_SERVER=localhost:2181
+# export AWS_PROFILE=stuart-aws-prod
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+export DOCKER_HOST="unix://${HOME}/.colima/docker.sock"
+
+# Work aliases
+alias disp='cd ~/workspace/stuart/dispatcher/'
+alias slib='cd ~/workspace/stuart/solver-libs/'
+# alias ls3='aws s3 --endpoint=http://localhost:5678 --region=""'
+alias sbtm4='sbt -mem 4096'
+alias sbtm='sbt -mem'
+
+# Get container process
+alias dps='docker ps'
+
+# Get process included stop container
+alias dpa='docker ps -a'
+
+# Stop and Remove all containers
+alias drmall='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+alias dstopall='docker stop $(docker ps -a -q)'
+alias drune='docker system prune'
+
+# Execute interactive container, e.g., $dex base /bin/bash
+alias dex='docker exec -i -t'
+
+alias aws-auth='aws sso login'
+
+export PATH=$PATH:~/workspace/stuart/kafka_2.13-2.6.0/bin
+
+function gozk() {
+  #there are 3 prod hosts, zookeeper-1, zookeeper-2 and zookeeper-3
+  case "$1" in
+    b|beta)
+      echo ">> BETA"
+      zkHost="zookeeper-1.beta.eu-west-1.stuart:2181"
+      ;;
+    s|sb|sand|sandbox)
+      echo ">> SANDBOX"
+      zkHost="zookeeper-1.sandbox.eu-west-1.stuart:2181"
+      ;;
+    q|qa)
+      echo ">> QA"
+      zkHost="zookeeper-1.qa.eu-west-1.stuart:2181"
+      ;;
+    d|disp|dispload)
+      echo ">> DISPLOAD"
+      zkHost="services-1.dispload.eu-west-1.stuart:2181"
+      ;;
+    p|prod)
+      echo ">> PROD"
+      zkHost="zookeeper-1.prod.eu-west-1.stuart:2181"
+      ;;
+    c|custom)
+      shift
+      echo ">> $1"
+      zkHost=$1
+      ;;
+    *)
+      echo ">> WRONG HOST"
+      ;;
+  esac
+  zkcli -s $zkHost
+}
