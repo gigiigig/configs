@@ -94,3 +94,7 @@ alias psf='ps -ef | grep'
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/l.antonini/.sdkman"
 [[ -s "/Users/l.antonini/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/l.antonini/.sdkman/bin/sdkman-init.sh"
+
+
+bindkey '^[^[[C' forward-word  # Option + Right Arrow
+bindkey '^[^[[D' backward-word
